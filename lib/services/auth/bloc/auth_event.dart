@@ -1,14 +1,21 @@
 abstract class AuthEvent {
- const AuthEvent();
+  const AuthEvent();
 }
 
 class AuthEventRegister extends AuthEvent {
   final String email;
   final String password;
 
-  AuthEventRegister({required this.email, required this.password,});
+  AuthEventRegister({
+    required this.email,
+    required this.password,
+  });
 }
 
 class AuthEventInitialize extends AuthEvent {
   const AuthEventInitialize();
+}
+
+class AuthEventShouldRegister extends AuthEvent {
+  const AuthEventShouldRegister();
 }

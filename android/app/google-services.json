@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338108213037",
+    "project_id": "habits-asultan",
+    "storage_bucket": "habits-asultan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338108213037:android:dac08dbe306c79bf4115a4",
+        "android_client_info": {
+          "package_name": "com.adeel4sultan.habits"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgIj6PGNYqNQPKJQmSV_SH0U0r0FlEjJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

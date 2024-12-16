@@ -47,28 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAGLkDT9crX2_NUydedSfNyfKGzwWpplrA',
-    appId: '1:633659356999:android:27206e72a54e3625113e62',
-    messagingSenderId: '633659356999',
-    projectId: 'mynotes-asultan',
-    storageBucket: 'mynotes-asultan.firebasestorage.app',
+    apiKey: 'AIzaSyCgIj6PGNYqNQPKJQmSV_SH0U0r0FlEjJw',
+    appId: '1:338108213037:android:dac08dbe306c79bf4115a4',
+    messagingSenderId: '338108213037',
+    projectId: 'habits-asultan',
+    storageBucket: 'habits-asultan.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBjTjNOcpZXIUuqmq8GOJg6eViUvbRYLiQ',
-    appId: '1:633659356999:ios:aa63257e64404989113e62',
-    messagingSenderId: '633659356999',
-    projectId: 'mynotes-asultan',
-    storageBucket: 'mynotes-asultan.firebasestorage.app',
-    iosBundleId: 'com.adeel4sultan.mynotes',
+    apiKey: 'AIzaSyBSy1pVxGLNV_-6fyfI_B5V_8bmi54CVys',
+    appId: '1:338108213037:ios:9ce9ba5c41d38f014115a4',
+    messagingSenderId: '338108213037',
+    projectId: 'habits-asultan',
+    storageBucket: 'habits-asultan.firebasestorage.app',
+    iosBundleId: 'com.example.habits',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDzHJNpxlroIxoorb2Iwy6HDJ0zu8Qb1bQ',
-    appId: '1:633659356999:web:7a9eca60e6bf5cf5113e62',
-    messagingSenderId: '633659356999',
-    projectId: 'mynotes-asultan',
-    authDomain: 'mynotes-asultan.firebaseapp.com',
-    storageBucket: 'mynotes-asultan.firebasestorage.app',
+    apiKey: 'AIzaSyBiZNdBDmMi0b9lsrPn92jWoE3CpJHbY2w',
+    appId: '1:338108213037:web:b47e3f3f954c13504115a4',
+    messagingSenderId: '338108213037',
+    projectId: 'habits-asultan',
+    authDomain: 'habits-asultan.firebaseapp.com',
+    storageBucket: 'habits-asultan.firebasestorage.app',
+    measurementId: 'G-Y7M612QTY1',
   );
 }
