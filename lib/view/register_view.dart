@@ -91,7 +91,11 @@ class _RegisterViewState extends State<RegisterView> {
                 //remove splash/shadow effect here
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<AuthBloc>().add(
+                        const AuthEventSignOut(),
+                      );
+                },
                 child: Text('sign in'),
                 //remove splash/shadow effect here
               )

@@ -1,3 +1,5 @@
+import 'package:habits/services/auth/auth_user.dart';
+
 abstract class AuthState {
   final bool isLoading;
   final String? loadingText;
@@ -32,5 +34,19 @@ class AuthStatePlaceholder extends AuthState {
     required this.exception,
     required super.isLoading,
     super.loadingText,
+  });
+}
+
+class AuthStateNeedsVerification extends AuthState {
+  const AuthStateNeedsVerification({
+    required super.isLoading,
+  });
+}
+
+class AuthStateSignedIn extends AuthState {
+  final AuthUser user;
+  const AuthStateSignedIn({
+    required this.user,
+    required super.isLoading,
   });
 }

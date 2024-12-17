@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +12,7 @@ import 'package:habits/services/cloud/routine.dart';
 import 'package:habits/view/register_view.dart';
 import 'package:habits/view/routine_view.dart';
 import 'package:habits/view/sign_in_view.dart';
+import 'package:habits/view/unimplemented_view.dart';
 import 'package:habits/view/verify_email_view.dart';
 
 void main() {
@@ -54,12 +57,15 @@ class HomePage extends StatelessWidget {
         }
       },
       builder: (context, state) {
+        log(state.toString());
         if (state is AuthStateRegistering) {
           return const RegisterView();
         } else if (state is AuthStateSignedOut) {
           return const SignInView();
-        } else if (state is AuthStatePlaceholder) {
+        } else if (state is AuthStateSignedIn) {
           return const RoutinesView();
+        } else if (state is AuthStateNeedsVerification) {
+          return const VerifyEmailView();
         } else {
           return Scaffold(
             body: Center(

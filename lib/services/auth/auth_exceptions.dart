@@ -9,7 +9,7 @@ class WeakPasswordException implements Exception {}
 
 class EmailAlreadyInUseException implements Exception {}
 
-class UserNotLoggedInException implements Exception {}
+class UserNotSignedInException implements Exception {}
 
 //generic exceptions
 
