@@ -54,26 +54,64 @@ class _SignInViewState extends State<SignInView> {
         body: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Here is the body of the page'),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'email',
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: ImageIcon(AssetImage('assets/icons/refresh.png')),
                 ),
-                controller: _emailController,
-                autocorrect: false,
-                autofocus: true,
-                keyboardType: TextInputType.emailAddress,
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    'habits',
+                    textScaler: TextScaler.linear(2),
+                  ),
+                ),
+              ]),
+              SizedBox(
+                height: 20,
               ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'password',
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  height: 45,
+                  child: TextField(
+                      controller: _emailController,
+                      autocorrect: false,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: const InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Color(0xFF3E465C),
+                        prefixIcon: Icon(Icons.email),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide.none),
+                        hintText: 'email',
+                      )),
                 ),
-                controller: _passwordController,
-                autocorrect: false,
-                autofocus: true,
-                keyboardType: TextInputType.emailAddress,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  height: 45,
+                  child: TextField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      enableSuggestions: false,
+                      autocorrect: false,
+                      decoration: const InputDecoration(
+                        isDense: true,
+                        filled: true,
+                        fillColor: Color(0xFF3E465C),
+                        prefixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide.none),
+                        hintText: 'password',
+                      )),
+                ),
               ),
               TextButton(
                 onPressed: () async {
@@ -84,7 +122,10 @@ class _SignInViewState extends State<SignInView> {
                         password: password,
                       ));
                 },
-                child: Text('sign in'),
+                child: Text(
+                  'sign in',
+                  selectionColor: Colors.teal,
+                ),
                 //remove splash/shadow effect here
               ),
               TextButton(
@@ -93,7 +134,7 @@ class _SignInViewState extends State<SignInView> {
                         const AuthEventShouldRegister(),
                       );
                 },
-                child: const Text('Register here'),
+                child: const Text('register here'),
               )
             ],
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:habits/services/auth/bloc/auth_bloc.dart';
 import 'package:habits/services/auth/bloc/auth_event.dart';
-import 'package:habits/view/menu_action.dart';
+import 'package:habits/views/menu_action.dart';
 import 'package:habits/utilities/dialogs/logout_dialog.dart';
 
 class RoutinesView extends StatefulWidget {

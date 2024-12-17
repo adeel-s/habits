@@ -9,11 +9,12 @@ import 'package:habits/services/auth/bloc/auth_event.dart';
 import 'package:habits/services/auth/bloc/auth_state.dart';
 import 'package:habits/services/auth/firebase_auth_provider.dart';
 import 'package:habits/services/cloud/routine.dart';
-import 'package:habits/view/register_view.dart';
-import 'package:habits/view/routine_view.dart';
-import 'package:habits/view/sign_in_view.dart';
-import 'package:habits/view/unimplemented_view.dart';
-import 'package:habits/view/verify_email_view.dart';
+import 'package:habits/themes/themes.dart';
+import 'package:habits/views/register_view.dart';
+import 'package:habits/views/routine_view.dart';
+import 'package:habits/views/sign_in_view.dart';
+import 'package:habits/views/unimplemented_view.dart';
+import 'package:habits/views/verify_email_view.dart';
 
 void main() {
   runApp(const HabitsApp());
@@ -27,10 +28,8 @@ class HabitsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'habits',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: darkTheme,
       home: BlocProvider<AuthBloc>(
         create: (context) => AuthBloc(FirebaseAuthProvider()),
         child: const HomePage(),
