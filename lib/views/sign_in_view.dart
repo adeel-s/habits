@@ -122,10 +122,7 @@ class _SignInViewState extends State<SignInView> {
                         password: password,
                       ));
                 },
-                child: Text(
-                  'sign in',
-                  selectionColor: Colors.teal,
-                ),
+                child: Text('sign in'),
                 //remove splash/shadow effect here
               ),
               TextButton(
