@@ -6,7 +6,7 @@ class Habit {
   //final String frequency;
   //final String location;
   //final String successCriteria;
-  //final String description;
+  final String description;
   //final String trigger;
 
   const Habit({
@@ -14,6 +14,7 @@ class Habit {
     required this.userId,
     required this.activity,
     required this.time,
+    required this.description,
   });
 
   //Figure out what this does...
