@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:habits/services/cloud/cloud_storage_constants.dart';
+
 class Habit {
   final String documentId;
   final String userId;
@@ -17,8 +20,10 @@ class Habit {
     required this.description,
   });
 
-  //Figure out what this does...
-  // Habit.fromSnapshot(QueryDocumentSnapshot <Map<String, dynamic>> snapshot)
-  // : documentId = snapshot.id,
-  // userId = snapshot.data()[ownerUserIdFieldName],
+  Habit.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : documentId = snapshot.id,
+        userId = snapshot.data()[userIdField],
+        activity = snapshot.data()[activityField] as String,
+        time = snapshot.data()[timeField].toDate() as DateTime,
+        description = snapshot.data()[descriptionField] as String;
 }

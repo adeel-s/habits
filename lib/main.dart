@@ -10,6 +10,7 @@ import 'package:habits/services/auth/bloc/auth_state.dart';
 import 'package:habits/services/auth/firebase_auth_provider.dart';
 import 'package:habits/services/cloud/routine.dart';
 import 'package:habits/themes/themes.dart';
+import 'package:habits/views/habit_view.dart';
 import 'package:habits/views/register_view.dart';
 import 'package:habits/views/routine_view.dart';
 import 'package:habits/views/sign_in_view.dart';
@@ -62,7 +63,7 @@ class HomePage extends StatelessWidget {
         } else if (state is AuthStateSignedOut) {
           return const SignInView();
         } else if (state is AuthStateSignedIn) {
-          return const RoutinesView();
+          return const HabitView();
         } else if (state is AuthStateNeedsVerification) {
           return const VerifyEmailView();
         } else {
