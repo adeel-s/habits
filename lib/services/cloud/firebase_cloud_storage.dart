@@ -24,7 +24,6 @@ class FirebaseCloudStorage {
       await habits.doc(documentId).update({activityField: activity});
       await habits.doc(documentId).update({timeField: time});
       await habits.doc(documentId).update({descriptionField: description});
-      
     } catch (e) {
       CouldNotUpdateNoteException();
     }
@@ -50,9 +49,8 @@ class FirebaseCloudStorage {
       documentId: fetchedHabit.id,
       userId: ownerUserId,
       activity: '',
-      time: DateTime.utc(2025, 1, 1), 
+      time: DateTime.utc(2025, 1, 1),
       description: '',
-
     );
   }
 

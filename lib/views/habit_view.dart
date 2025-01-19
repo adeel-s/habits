@@ -59,26 +59,44 @@ class _HabitViewState extends State<HabitView> {
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
-        child: StreamBuilder(
-          stream: _habitsService.allHabits(ownerUserId: userId),
-          builder: (context, snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-              case ConnectionState.active:
-                if (snapshot.hasData) {
-                  final allHabits = snapshot.data as Iterable<Habit>;
-                  return HabitsListView(
-                    habits: allHabits,
-                  );
-                } else {
-                  log(snapshot.connectionState.toString());
-                  return const CircularProgressIndicator();
-                }
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            StreamBuilder(
+              stream: _habitsService.allHabits(ownerUserId: userId),
+              builder: (context, snapshot) {
+                switch (snapshot.connectionState) {
+                  case ConnectionState.waiting:
+                  case ConnectionState.active:
+                    if (snapshot.hasData) {
+                      final allHabits = snapshot.data as Iterable<Habit>;
+                      return HabitsListView(
+                        habits: allHabits,
+                      );
+                    } else {
+                      log(snapshot.connectionState.toString());
+                      return const CircularProgressIndicator();
+                    }
 
-              default:
-                return const CircularProgressIndicator();
-            }
-          },
+                  default:
+                    return const CircularProgressIndicator();
+                }
+              },
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.add),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('view completed'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
